@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функции в JavaScript</title>
+</head>
+<body>
+    <script>
+        function square(number) {
+        return number * number
+    }
+
+    function myFunc(the0bject) {
+        the0bject.make = "Toyota"
+    }
+    var mycar = { make: "Honda", model: "Accord", year:1998 };
+    var x, y;
+    x = mycar.make;
+    myFunc(mycar);
+    y = mycar.make;
+    console.log(y);
+    </script>
+</body>
+</html>

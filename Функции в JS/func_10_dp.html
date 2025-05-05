@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function multiply(a,b) {
+            b = typeof b !== "undefined" ? b : 1;
+            return a * b;
+         }
+
+         multiply(5);
+         function multiply(a, b = 1) {
+         return a * b;
+         }
+         multiply(5);
+
+    
+    </script>
+</body>
+</html>

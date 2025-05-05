@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вызовы функций</title>
+</head>
+<body>
+    <script>
+        square(5);
+        console.log(square(5));
+        /* ... */
+        function square(n) {
+            return n * n;
+        }
+
+        console.log(square);
+        console.log(square(5));
+        var square = function (n) {
+            return n * n;
+        };
+    </script>
+</body>
+</html>
