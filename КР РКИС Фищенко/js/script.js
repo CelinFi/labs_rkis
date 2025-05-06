@@ -90,6 +90,7 @@ function LoadPageData (){
         content.innerHTML = response;
         _elem('.exit').addEventListener('click', function (){
             LoadPageAuth ()
+
          })
     })
 
@@ -104,6 +105,7 @@ function LoadPageData (){
         if (xhr.status == 200) {
             //document.body.innerHTML = xhr.responseText
             let response = JSON.parse(xhr.responseText)
+            let table = document.querySelector('.user-files tbody')
             MakeTableData(response)
         }
         if (xhr.status == 401) {
@@ -112,9 +114,7 @@ function LoadPageData (){
         }
     }
 }
-} 
 
-   /*Таблица данных*/
 function MakeTableCell(content) {
     let cell = document.createElement('td')
     cell.textContent = content;
@@ -123,7 +123,10 @@ function MakeTableCell(content) {
 
 
 function MakeTableData (data) {
-    data.forEach(element => {
+    
+    let files_table=data
+    for(i=0;i<files_table.length;i++){
+        const element = files_table[i]
        let row = document.createElement('tr')
        row.append(MakeTableCell(element.name))
        row.append(MakeTableCell(element.gender))
@@ -136,8 +139,12 @@ function MakeTableData (data) {
        row.append(MakeTableCell(element.address))
        row.append(MakeTableCell(element.favoriteFruit))
     
-       document.querySelector('.user-files tbody').append(row)
-    });
+       table.append(row)
+    };
+} 
+
+   /*Таблица данных*/
+
 } 
 
 
